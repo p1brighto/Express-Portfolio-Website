@@ -6,8 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });*/
 // info route
-router.get('/', function (req, res) {
-    res.sendFile("./view/test/index.html");
+router.get('/', function (req, res, next) {
+    res.sendFile("view/test/index.html");
 });
 /* GET about page. */
 router.get('/about', function(req, res, next) {
