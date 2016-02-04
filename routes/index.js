@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });*/
 // info route
 router.get('/', function (req, res, next) {
-    res.sendFile("view/test/index.html");
+    res.sendFile("./views/test/index.html");
 });
 /* GET about page. */
 router.get('/about', function(req, res, next) {
