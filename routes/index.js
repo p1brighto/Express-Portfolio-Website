@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });*/
 router.get('/', function (req, res, next) {
     //res.send('Hello Express!');
-    res.sendFile(path.join(__dirname, "views/test", "index.html"));
+    res.sendFile(path.join(__dirname, "test", "index.html"));
 });
 /* GET about page. */
 router.get('/about', function(req, res, next) {
