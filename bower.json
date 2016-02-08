@@ -1,0 +1,24 @@
+{
+  "name": "express-portfolio-assignment1",
+  "description": " Personal Portfolio Website using ExpressJS and implementing the EJS templating engine",
+  "main": "",
+  "authors": [
+    "p1brighto <p1brighto@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/p1brighto/Express-Portfolio-assignment1",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/javascripts/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "font-awsome#^4.5.0"
+  }
+}
