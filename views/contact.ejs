@@ -1,9 +1,27 @@
 <% include partials/header.ejs %>
- 
-<!-- MAIN CONTENT -->
+
+    <!-- MAIN CONTENT -->
     <main class="container">
         <h1>Contact Page</h1>
-        <p>Lorem ipsum dolor sit amet, placerat metus, tempus vel in integer felis duis sapien, lacinia sit suspendisse lacus. Accumsan commodi nec nisl nibh tempus, in potenti nec, consequat in sed, massa vivamus ligula lacinia blandit proin. Arcu eros vitae felis eget urna, venenatis mauris est felis, pede ac ante nam vestibulum libero. In sed sit rhoncus lorem magna. In purus neque est, diam nulla, vivamus odio rutrum hymenaeos, vehicula a. Mauris et a, at rutrum egestas dolor, risus diam aliquet urna odio velit, magna ultricies, dictum laoreet laborum eos.</p>
+        <form  name="contactform">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" class="form-control" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" class="form-control" name="email" placeholder="Your email adress" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="number" class="form-control" name="phone" placeholder="Your Phone number">
+            </div>
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea name="message" class="form-control" rows="6"  placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" name="submit" value="Send your message" class="btn btn-default">Submit</button>
+        </form>
     </main>
-    
-<% include partials/footer.ejs %>
+
+    <% include partials/footer.ejs %>
