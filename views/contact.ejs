@@ -1,27 +1,112 @@
 <% include partials/header.ejs %>
 
-    <!-- MAIN CONTENT -->
-    <main class="container">
-        <h1>Contact Page</h1>
-        <form  name="contactform">
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" class="form-control" name="name" placeholder="Your full name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" class="form-control" name="email" placeholder="Your email adress" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="number" class="form-control" name="phone" placeholder="Your Phone number">
-            </div>
-            <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea name="message" class="form-control" rows="6"  placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" name="submit" value="Send your message" class="btn btn-default">Submit</button>
-        </form>
-    </main>
+			<!-- Contact -->
+			<section id="contact">
+				<h2><span>Get in touch</span></h2>
+				<!-- Google Map -->
+				<div id="map"></div>
+				<!-- End Google Map -->
+				
+				<!-- Contact Left Column -->
+				<div class="onethird-column ">
+					<h4><span>Contact details</span></h4>
+					<!-- Social Icons -->
+					<div class="social-bookmarks">
+						<ul>
+							<li class="twitter"><a href="https://twitter.com/p1brighto" title="Follow me on Twitter">twitter</a></li>
+							 <li class="facebook"><a href="https://www.facebook.com/p1brighto" title="Find me on Facebook">facebook</a></li>
+							 <li class="googleplus"><a href="https://plus.google.com/+brightopaul" title="Googleplus">googleplus</a></li>
+							 <li class="linkedin"><a href="https://ca.linkedin.com/pub/brighto-paul/b7/70/350" title="LinkedIn">linkedin</a></li>
+						</ul>
+					</div>
+					<!-- End Social Icons-->
+					<!-- Contact Details -->
+					<ul class="contact-details">
+						<li><span>Address</span>253 Johnson Street Barrie,Canada</li>
+						<li><span>Email</span> 		<a href="mailto:p1brighto@gmail.com" title="Drop us an email">p1brighto@gmail.com</a></li>
+						<li><span>Phone</span> 	+1 705-970-4096</li>
+						<li><span>Website</span> <a href="http://www.brighto-paul.com/" title="Visit again">www.brighto-paul.com</a></li>
+					</ul>
+					<!--End Contact Details -->
+				</div>
+				<!-- End Left Column -->
+                
+				<!-- Right Column -->
+				<div class="twothird-column">
+					<h4><span>Send a message</span></h4>
+					<p>For any query or additional information,please use the form below to get in touch with me.</p>
+					<!-- Contact Form -->
+					<form method="post"  name="contactform" id="contactform">
 
-    <% include partials/footer.ejs %>
+						<input type="hidden" name="contact_form" value="1" />
+						<!-- Column Left -->
+						<div class="column">
+							<input type="text" id="name" name="name" class="input" placeholder="Your Name"/>
+						</div>
+						<!-- End Column -->
+						<!-- Column Right -->
+						<div class="column last">
+							<input type="text" id="email" name="email" class="input" placeholder="Your Email"/>
+						</div>
+						<!-- End Column Right -->
+						<textarea id="message" name="message" rows="6" class="textarea" placeholder="Your Message"></textarea>					
+						<div class="clear"></div>
+						<div class="contact_ajax_message"></div>
+						<input type="submit" name="submit" value="Send your message" class="submit-button" />
+					</form>
+					<!-- /Contact Form -->
+                 </div>
+				<!-- End Right Column -->
+			</section>				
+			<!-- End Contact Tab -->
+
+	<script type="text/javascript">
+	$(function() {
+
+
+		// Contact Form Submission
+		$("form#contactform").on('submit', function(e) {
+
+			// stop form from submitting
+			e.preventDefault();
+			
+			var $this = $(this);
+
+			var $message_box = $(".contact_ajax_message");
+
+			var form_data = $this.serialize();
+
+			$message_box.html("Sending...");
+
+			$.post("mail.php", form_data, function(data) {
+
+				var r_data = JSON.parse(data);
+
+				console.log(r_data)
+
+				$.each(r_data, function(i, v) {
+
+					if(v.status == true) {
+
+						$message_box.html("<p class='success'>" + v.message + "</p>");
+
+					} else {
+
+						$message_box.html("<p class='error'>" + v.message + '</p>');
+
+					}
+
+				});
+
+			});
+
+		});
+
+		// EO ontact form submission
+
+
+	});
+
+	</script>
+
+<% include partials/footer.ejs %>
