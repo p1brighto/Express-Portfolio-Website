@@ -11,7 +11,7 @@
 	<meta name="description" content="Brighto Paul Resume" /> 
 	<meta name="keywords" content="Brighto Paul"/>
 	<meta name="author" content="Brighto Paul"/>
-	<title>Brighto Paul | Problem solving,then coding | P1bright@</title>
+	<title><%= title %></title>
 	<!-- End Meta Info -->
 	
 	<!-- Stylesheets (Css files)-->
@@ -61,11 +61,38 @@
 				<!-- Navigation -->
 				<nav class="menu">
 					<ul class="tabs">
-						<li><a href="/" class="tab-profile" title="Home">Home</a></li>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <% if(title === "Home") { %>  
+						<li class="active"><a href="/" class="tab-profile" title="Home">Home</a></li>
                         <li><a href="project" class="tab-portfolio" title="Project">Project</a></li>
                         <li><a href="service" class="tab-service" title="Service">Service</a></li>
 						<li><a href="about" class="tab-resume" title="About">About</a></li>
 						<li><a href="contact" class="tab-contact" title="Contact">Contact</a></li>
+                        <% } else if(title == "Project") { %>
+                        <li><a href="/" class="tab-profile" title="Home">Home</a></li>
+                        <li class="active"><a href="project" class="tab-portfolio" title="Project">Project</a></li>
+                        <li><a href="service" class="tab-service" title="Service">Service</a></li>
+						<li><a href="about" class="tab-resume" title="About">About</a></li>
+						<li><a href="contact" class="tab-contact" title="Contact">Contact</a></li>
+                        <% } else if(title == "Service") { %>
+                        <li><a href="/" class="tab-profile" title="Home">Home</a></li>
+                        <li><a href="project" class="tab-portfolio" title="Project">Project</a></li>
+                        <li class="active"><a href="service" class="tab-service" title="Service">Service</a></li>
+						<li><a href="about" class="tab-resume" title="About">About</a></li>
+						<li><a href="contact" class="tab-contact" title="Contact">Contact</a></li>
+                        <% } else if(title == "About") { %>
+                        <li><a href="/" class="tab-profile" title="Home">Home</a></li>
+                        <li><a href="project" class="tab-portfolio" title="Project">Project</a></li>
+                        <li><a href="service" class="tab-service" title="Service">Service</a></li>
+						<li class="active"><a href="about" class="tab-resume" title="About">About</a></li>
+						<li><a href="contact" class="tab-contact" title="Contact">Contact</a></li>
+                        <% } else if(title == "Contact") { %>
+                        <li><a href="/" class="tab-profile" title="Home">Home</a></li>
+                        <li><a href="project" class="tab-portfolio" title="Project">Project</a></li>
+                        <li><a href="service" class="tab-service" title="Service">Service</a></li>
+						<li><a href="about" class="tab-resume" title="About">About</a></li>
+						<li class="active"><a href="contact" class="tab-contact" title="Contact">Contact</a></li>
+                        <%}%>
 					</ul>
 				</nav>
 				<!-- End Navigation -->
