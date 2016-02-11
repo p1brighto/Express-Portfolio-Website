@@ -1,3 +1,9 @@
+/***************************************************
+Theme Name: Personal Website
+Author: Brighto Paul
+Author URI: http://www.brighto-paul.com
+Version: 1.1
+***************************************************/
 jQuery(document).ready(function() {
 
     // --------------------------------------------------------
