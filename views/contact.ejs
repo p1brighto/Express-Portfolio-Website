@@ -15,10 +15,10 @@
 					<!-- Social Icons -->
 					<div class="social-bookmarks">
 						<ul>
-							<li class="twitter"><a href="https://twitter.com/p1brighto" title="Follow me on Twitter">twitter</a></li>
-							 <li class="facebook"><a href="https://www.facebook.com/p1brighto" title="Find me on Facebook">facebook</a></li>
-							 <li class="googleplus"><a href="https://plus.google.com/+brightopaul" title="Googleplus">googleplus</a></li>
-							 <li class="linkedin"><a href="https://ca.linkedin.com/pub/brighto-paul/b7/70/350" title="LinkedIn">linkedin</a></li>
+							<li class="twitter"><a href="https://twitter.com/p1brighto" target="_blank" title="Follow me on Twitter">twitter</a></li>
+							 <li class="facebook"><a href="https://www.facebook.com/p1brighto" target="_blank"title="Find me on Facebook">facebook</a></li>
+							 <li class="googleplus"><a href="https://plus.google.com/+brightopaul" target="_blank" title="Googleplus">googleplus</a></li>
+							 <li class="linkedin"><a href="https://ca.linkedin.com/pub/brighto-paul/b7/70/350" target="_blank" title="LinkedIn">linkedin</a></li>
 						</ul>
 					</div>
 					<!-- End Social Icons-->
@@ -61,54 +61,4 @@
 				<!-- End Right Column -->
 			</section>				
 			<!-- End Contact Tab -->
-
-	<script type="text/javascript">
-	$(function() {
-
-
-		// Contact Form Submission
-		$("form#contactform").on('submit', function(e) {
-
-			// stop form from submitting
-			e.preventDefault();
-			
-			var $this = $(this);
-
-			var $message_box = $(".contact_ajax_message");
-
-			var form_data = $this.serialize();
-
-			$message_box.html("Sending...");
-
-			$.post("mail.php", form_data, function(data) {
-
-				var r_data = JSON.parse(data);
-
-				console.log(r_data)
-
-				$.each(r_data, function(i, v) {
-
-					if(v.status == true) {
-
-						$message_box.html("<p class='success'>" + v.message + "</p>");
-
-					} else {
-
-						$message_box.html("<p class='error'>" + v.message + '</p>');
-
-					}
-
-				});
-
-			});
-
-		});
-
-		// EO ontact form submission
-
-
-	});
-
-	</script>
-
 <% include partials/footer.ejs %>
