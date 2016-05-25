@@ -274,10 +274,11 @@ Version: 2.1
 	.graph .line span:last-child{margin-top:0px;}
 	.bar { position: absolute; margin-bottom: 0px; }
 	
-	.jquery {background-color: #E74B4E;}
-	.css3 {background-color: #F79820;}
-	.html5 {background-color: #6BBFE0;}
+	.java {background-color: #E74B4E;}
+	.c {background-color: #DAE000;}
+	.mean {background-color: #F79820;}
 	.php {background-color: #A9CE22;}
+	.html {background-color: #6BBFE0;}
 	.mysql {background-color: #333333;}
 	
 	.job-position {float:left; margin-right:10px;line-height:25px; padding-top:30px; }
